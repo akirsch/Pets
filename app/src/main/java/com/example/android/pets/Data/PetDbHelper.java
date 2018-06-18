@@ -32,15 +32,14 @@ public class PetDbHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL(SQL_DELETE_ENTRIES);
         onCreate(db);
-
     }
 
     private static final String SQL_CREATE_PETS_TABLE = "CREATE TABLE " + PetEntry.TABLE_NAME + " " +
             "(" + PetEntry.COLUMN_ID  + " " + INTEGER_TYPE  + PRIMARY_KEY  + AUTOINCREMENT + COMMA_SEP +
-            PetEntry.COLUMN_PET_NAME  + TEXT_TYPE + NOT_NULL + COMMA_SEP +
-            PetEntry.COLUMN_PET_BREED + TEXT_TYPE + COMMA_SEP +
-            PetEntry.COLUMN_PET_GENDER + INTEGER_TYPE + NOT_NULL + "DEFAULT " + 0 + COMMA_SEP +
-            PetEntry.COLUMN_PET_WEIGHT + INTEGER_TYPE + ");";
+            PetEntry.COLUMN_PET_NAME  + " " + TEXT_TYPE + NOT_NULL + COMMA_SEP +
+            PetEntry.COLUMN_PET_BREED + " " + TEXT_TYPE + COMMA_SEP +
+            PetEntry.COLUMN_PET_GENDER + " " + INTEGER_TYPE + NOT_NULL + "DEFAULT " + 0 + COMMA_SEP +
+            PetEntry.COLUMN_PET_WEIGHT + " " + INTEGER_TYPE + ");";
 
     private static final String SQL_DELETE_ENTRIES = "DROP TABLE IF EXISTS " + PetEntry.TABLE_NAME;
 
